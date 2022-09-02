@@ -2,12 +2,17 @@ import fs from "fs";
 
 export const getAllUser = async (req, res) => {
     try {
-        const users = await fs.readFileSync("./users.json");
+        const data = await fs.readFileSync("./users.json");
+
+        const _limit = +req.query._limit || 5;
+        const allUsers = JSON.parse(data);
+
+        const users = allUsers.slice(0, _limit);
 
         res.json({
             massage: "success",
             success: true,
-            data: JSON.parse(users),
+            data: users,
         });
     } catch (error) {
         res.json({
