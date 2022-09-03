@@ -17,8 +17,6 @@ export const addNewUser = async (req, res) => {
         });
 
         const data = await fs.readFileSync("./users.json");
-
-        // const _limit = +req.query._limit || 5;
         const allUsers = JSON.parse(data);
 
         const id = getId(allUsers);
@@ -31,10 +29,8 @@ export const addNewUser = async (req, res) => {
             JSON.stringify(allUsers, null, 4)
         );
 
-        // const users = allUsers.slice(0, _limit);
-
         res.json({
-            massage: "success",
+            massage: "successfully added",
             success: true,
             data: validData,
         });

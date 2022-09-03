@@ -3,9 +3,7 @@ import fs from "fs";
 export const getRandomUser = async (req, res) => {
     try {
         const data = await fs.readFileSync("./users.json");
-
         const users = JSON.parse(data);
-
         const index = Math.floor(Math.random() * users?.length);
 
         res.json({

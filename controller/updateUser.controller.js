@@ -7,7 +7,6 @@ const getId = (users) =>
 export const updateUser = async (req, res) => {
     try {
         const { gender, name, contact, address, photoUrl } = req.body;
-
         const id = +req.params.id;
 
         const validData = validateData({
@@ -19,13 +18,9 @@ export const updateUser = async (req, res) => {
         });
 
         const data = await fs.readFileSync("./users.json");
-
-        // const _limit = +req.query._limit || 5;
         const allUsers = JSON.parse(data);
 
         const index = allUsers.findIndex((v) => v.id === id);
-        console.log(index);
-
         if (index < 0) {
             throw new Error("Invalid User");
         }
@@ -39,10 +34,8 @@ export const updateUser = async (req, res) => {
             JSON.stringify(allUsers, null, 4)
         );
 
-        // const users = allUsers.slice(0, _limit);
-
         res.json({
-            massage: "success",
+            massage: "successfully updated",
             success: true,
             data: allUsers[index],
         });

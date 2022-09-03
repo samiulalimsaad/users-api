@@ -36,7 +36,7 @@ export const bulkUpdateUser = async (req, res) => {
         );
 
         res.json({
-            massage: "success",
+            massage: "successfully updated",
             success: true,
             data: updatedUsers,
         });

@@ -5,19 +5,14 @@ export const deleteUser = async (req, res) => {
         const id = +req.params.id;
 
         const data = await fs.readFileSync("./users.json");
-
-        // const _limit = +req.query._limit || 5;
         const allUsers = JSON.parse(data);
 
         const index = allUsers.findIndex((v) => v.id === id);
-        console.log(index);
-
         if (index < 0) {
             throw new Error("Invalid User");
         }
 
         const deletedUser = allUsers[index];
-
         allUsers.splice(index, 1);
 
         const newData = await fs.writeFileSync(
@@ -25,10 +20,8 @@ export const deleteUser = async (req, res) => {
             JSON.stringify(allUsers, null, 4)
         );
 
-        // const users = allUsers.slice(0, _limit);
-
         res.json({
-            massage: "success",
+            massage: "successfully deleted",
             success: true,
             data: deletedUser,
         });
