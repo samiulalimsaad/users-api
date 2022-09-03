@@ -73,26 +73,10 @@
     },
     {
         "id": 10,
-        "gender": "male",
-        "name": "1010",
-        "contact": "1010",
-        "address": "1010",
-        "photoUrl": "1010"
-    },
-    {
-        "gender": "female",
-        "name": "1212",
-        "contact": "1212",
-        "address": "1212",
-        "photoUrl": "1212",
-        "id": 12
-    },
-    {
-        "gender": "male",
-        "name": "1111",
-        "contact": "1111",
-        "address": "1111",
-        "photoUrl": "1111",
-        "id": 13
+        "gender": "Female",
+        "name": "Aurelea Sheircliffe",
+        "contact": "+48-867-263-4293",
+        "address": "29 Melvin Crossing",
+        "photoUrl": "http://dummyimage.com/226x100.png/dddddd/000000"
     }
 ]
